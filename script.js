@@ -21,7 +21,44 @@ function showDivs(n) {
 }
 
 var userName = window.prompt("Hello, What is your name? ");
-console.log("Let's play", userName)
+console.log("Let's play", userName);
+
+var MAX_TRY = 5;
+var numAttempts = 1;
+
+
+while (numAttempts <= MAX_TRY){
+    print("Attempt", numAttempts)
+    userGuesses = int(input("Enter a guess:"))
+    computerGuesses = randint(MIN,MAX)
+    numAttempts = numAttempts + 1
+    if (userGuesses == computerGuesses){
+        print("Good Job,",userName,"You guessed my number in",numAttempts, "guesses!")
+        break;
+    }
+    else if (userGuesses < MIN){
+        print("You must enter a number between 1 and 20")
+    }
+    else if (userGuesses > MAX){
+        print("You must enter a number between 1 and 20")
+    }
+    
+    else{
+        if (numAttempts > MAX_TRY){
+            print("Gameover!")
+            playAgain = input("Would you like to play again?")
+            if (playAgain == 'yes'){
+                numAttempts = 1
+            }else{
+                print("Thank you for playing")
+            }
+        }
+    }
+    
+}
+  
+  
+  
 /**
  * userName = input("Hello, What is your name? ")
 print()
