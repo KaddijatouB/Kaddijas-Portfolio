@@ -1,0 +1,40 @@
+html,body {
+    background-color: rgb(255, 255, 255);
+    border: solid rgb(93, 93, 95);
+    border-width: thin;
+    display:block;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #ad9393;
+    font-size: medium;
+    font-family: fantasy;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+ul {
+    text-align: center;
+    text-decoration: silver;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#myImages {
+    margin: 0 35% 0 40%;
+}
+.center {
+    margin:auto 50% auto 50%;
+
+}
+
+
