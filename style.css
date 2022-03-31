@@ -1,3 +1,4 @@
+/* design for body */
 html,body {
     background-color: rgb(255, 255, 255);
     border: solid rgb(93, 93, 95);
@@ -5,7 +6,7 @@ html,body {
     display:block;
     box-sizing: border-box;
 }
-
+/* design for headers h1 */
 h1 {
     text-align: center;
     color: #ad9393;
@@ -14,13 +15,13 @@ h1 {
     margin-top: 3%;
     margin-bottom: 2%;
 }
-
+/* design for  */
 .card {
     margin: 0 auto; 
     float: none; 
     margin-bottom: 10px; 
 }
-
+/* design for  */
 ul {
     text-align: center;
     text-decoration: silver;
@@ -28,13 +29,58 @@ ul {
     margin: 0;
     padding: 0;
 }
-
+/* design for  images*/
 #myImages {
     margin: 0 35% 0 40%;
 }
+/* design to center  */
 .center {
     margin:auto 50% auto 50%;
 
 }
+/* design for  questions h3*/
+h3 {
+    text-align: center;
+    color: silver;
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
 
+/* Style for social media icons */
+.social {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    margin:auto 50% auto 50%;    
+}
+.social:ctr {
+    margin:auto 50% auto 50%;
+} 
+  
+/* Add a hover effect */
+.social:hover {
+    opacity: 0.7;
+}
+/* Linkin color style */
+.social-LinkedIn {
+    background: #3B5998;
+    color: white;
+}
+  
+  /* Github color style */
+.social-GitHub {
+    background: #55ACEE;
+    color: white;
+}
 
+footer {
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+
+}

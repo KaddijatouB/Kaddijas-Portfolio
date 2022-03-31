@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link bootsrap for about me style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Kaddijatou's Portfolio</title>
+    <!-- link style file -->
     <link rel="stylesheet" href="style.css">
+    <!-- Add icon library for social media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -21,7 +25,7 @@
 
      <!-- add coding projects discription and link to github  -->
     <h1>Coding Projects</h1>
-    <div id="github">
+    <div>
         <ul>
             <li>Database to analyze movie reviews</li>
             <li>Menu class to help with future projects</li>
@@ -29,21 +33,41 @@
             <li>Implemented a tic-tac-toe game for user vs computer </li>
         </ul>
     </div>
+    
 
      <!-- add photos of events decorated -->
     <h1>Event design Projects</h1>
     <div id="myImages">
         <img class="mySlides" src="./assets /IMG_4305.jpeg" alt="Indoor Gender reveal">
         <img class="mySlides" src="./assets /IMG_4309.jpeg" alt="Outdoor baby shower">
-        
+        <img class="mySlides" src="./assets /IMG_4325.jpeg" alt="Outdoor baby shower">
+        <img class="mySlides" src="./assets /IMG_4894.jpeg" alt="Outdoor baby shower">
+        <img class="mySlides" src="./assets /IMG_6307.jpeg" alt="Outdoor baby shower">
+        <img class="mySlides" src="./assets /6C670D7D-8FEC-43A8-9C1B-37034312D641.jpeg" alt="Outdoor baby shower">
+        <img class="mySlides" src="./assets /945FDB23-4B6A-49C1-BD4F-AC6C7CFFB357.jpeg" alt="Outdoor baby shower">
+        <img class="mySlides" src="./assets /C77CED09-2CC6-4FF4-89A8-E13F4F3C88E3.jpeg" alt="Outdoor baby shower">
+
+
         <!-- add botton to click on next photo -->
         <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
     </div>
 
+    <!-- add question about me game -->
+    <h1>Lets play a game!</h1> 
+    <h3 id="question"></h3>
+    <div id ="center">
+        <input type="input" name="answer" value="" id="a1"><label for="a1"></label>
+        <button id="next">Next</button>
+    </div>
+    <!-- social media icons -->
+    <div class="social">
+        <i class="fa fa-linkedin"></i>
+        <i class="fa fa-github"></i>
+    </div>
     
-  
-
+    <!-- link style file -->        
     <script src="script.js"></script>
 </body>
+<footer>&copy;2022 Kaddijatou Baldeh - All Rights Reserved</footer>
 </html>
