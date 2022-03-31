@@ -1,4 +1,4 @@
-// create function for clicking to next image 
+//create function for clicking to next image 
 var slide = 1;
 showDivs(slide);
 
@@ -20,67 +20,93 @@ function showDivs(n) {
   x[slide-1].style.display = "block"; 
 }
 
+// creat a questions /answers about me quiz to website
 
-var questions = [{
-    question: "What is Kaddijatou's favorite color?",
-    answers: ["Black", "Pink"]
-}, {
-    question: "What is Kaddijatou's millitary occupation?",
-    answers: ["Medic", "Healthcare specialist", "68W"]
-}, {
-    question: "What is Kaddijatou's favorite bible story",
-    answers: ["Ruth", "Paul", "David"]
-}];
+function buildQuiz(){
+    const output = [];
 
-// Generic function to return a shuffled array:
-function shuffled(arr) {
-    arr = arr.slice(); 
-    for (var i = 0; i < arr.length; i++) {
-        var j = Math.floor(Math.random() * (arr.length - i)) + i;
-        [arr[i], arr[j]] = [arr[j], arr[i]]; // swap
-    }
-    return arr;
-}
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
 
-// define variables for some of the HTML elements:
-var domQuestion = document.querySelector('#question');
-var domAnswers = Array.from(document.querySelectorAll('input[name=answer]'));
-var domNext = document.querySelector('#next');
+        const answers = [];
 
-function displayQuestion() {
-    // get a random order for the answers:
-    var answers = shuffled(questions[questionId].answers);
-    // Display question
-    domQuestion.textContent = (questionId+1) + '. ' + 
-                              questions[questionId].question;
-    domAnswers.forEach(function (input, i){
-        // Set checkbox value and unselect it
-        input.value = answers[i];
-        input.checked = false;
-        // Display the answer text
-        input.nextElementSibling.textContent = answers[i];
+        for(letter in currentQuestion.answers){
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+        output.push(
+          `<div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+        );
+      }
+    );
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    let numCorrect = 0;
+
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      if(userAnswer === currentQuestion.correctAnswer){
+        numCorrect++;
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      else{
+        answerContainers[questionNumber].style.color = 'red';
+      }
     });
-}
-// Initialise and display first question
-var questionId = 0;
-var correctAnswers = 0;
-displayQuestion();
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
 
-// Respond to a click on the Next button 
-domNext.addEventListener('click', function () {
-    // update correct answer counter:
-    var domAnswer = domAnswers.find(input => input.checked);
-    if (!domAnswer) return; // nothing was selected
-    // update number of correctly answered questions:
-    if (domAnswer.value == questions[questionId].answers[0]) correctAnswers++;
-    // next question
-    questionId++;
-    if (questionId >= questions.length) {
-        alert('You have answered ' + correctAnswers + 
-              ' of ' + questions.length + ' questions correctly.');
-        // restart
-        questionId = 0;
-        correctAnswers = 0;
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestions = [
+    {
+      question: "What is Kaddijatou's favorite color?",
+      answers: {
+        a: "Black",
+        b: "Olive green",
+        c: "Pink"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What is Kaddijatou's favorite Bible story?",
+      answers: {
+        a: "Ruth",
+        b: "Exodus",
+        c: "Creation"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "What is Kaddijatou's millitary occupation?",
+      answers: {
+        a: "Information techincal specialist",
+        b: "Combat medic",
+        c: "Driver",
+        
+      },
+      correctAnswer: "b"
     }
-    displayQuestion();
-});
+  ];
+
+  buildQuiz();
+
+  submitButton.addEventListener('click', showResults);
+
+

@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- link bootsrap for about me style -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Kaddijatou's Portfolio</title>
-    <!-- link style file -->
     <link rel="stylesheet" href="style.css">
-    <!-- Add icon library for social media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -17,23 +14,38 @@
     <!-- add about me and add link to linked list-->
     <h1>About Me</h1>
     <div class="card" style="width: 30rem;">
-        <img src="./assets /IMG_3236.jpeg" class="card-img-top" alt="...">
+        <img src="./assets /IMG_1806.jpg" class="card-img-top">
         <div class="card-body">
-          <p class="card-text">Computer science student at Seattle Pacific University.</p>
+          <p class="card-text">My name is Kaddijatou Baldeh. I am a multi-talented indivual who loves to make all things beautiful. I have over 10 years of professtional experience in brand strategy, visual design, and account management. I'm also a member of the Washington Army National guard. I believe in working hard on developing my professional skills and learning new things all the time. Currently, I am computer science student at Seattle Pacific University. 
+              Programing skills: C++, Python, HTML/CSS and javascript.
+          </p>
         </div>
       </div>
 
      <!-- add coding projects discription and link to github  -->
     <h1>Coding Projects</h1>
-    <div>
-        <ul>
-            <li>Database to analyze movie reviews</li>
-            <li>Menu class to help with future projects</li>
-            <li>Implemented Linked List of Books used to for libraries</li>
-            <li>Implemented a tic-tac-toe game for user vs computer </li>
-        </ul>
+
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <p class="card-text">Database to analyze movie reviews.</p>
+        </div>
     </div>
-    
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <p class="card-text">Menu class to help with future projects</p>
+        </div>
+    </div>
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <p class="card-text">Implemented Linked List of Books used to build libraries</p>
+        </div>
+    </div>
+    <div class="card" style="width: 30rem;">
+        <div class="card-body">
+          <p class="card-text">Implemented a tic-tac-toe game for user vs computer</p>
+        </div>
+    </div>
+
 
      <!-- add photos of events decorated -->
     <h1>Event design Projects</h1>
@@ -47,7 +59,6 @@
         <img class="mySlides" src="./assets /945FDB23-4B6A-49C1-BD4F-AC6C7CFFB357.jpeg" alt="Outdoor baby shower">
         <img class="mySlides" src="./assets /C77CED09-2CC6-4FF4-89A8-E13F4F3C88E3.jpeg" alt="Outdoor baby shower">
 
-
         <!-- add botton to click on next photo -->
         <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
         <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
@@ -55,15 +66,19 @@
 
     <!-- add question about me game -->
     <h1>Lets play a game!</h1> 
-    <h3 id="question"></h3>
-    <div id ="center">
-        <input type="input" name="answer" value="" id="a1"><label for="a1"></label>
-        <button id="next">Next</button>
+    <div id="center">
+        <h3>More about me</h3>
+        <h3 id="question"></h3>
+        <div id="quiz"></div>
+        <button id="submit">Submit Quiz</button>
+        <div id="results"></div>
     </div>
+    
+    
     <!-- social media icons -->
     <div class="social">
-        <i class="fa fa-linkedin"></i>
-        <i class="fa fa-github"></i>
+        <a href="https://www.linkedin.com/in/kaddijatou-baldeh-38817181/" class="fa fa-linkedin"></a>
+        <a href="https://github.com/KaddijatouB" class="fa fa-github"></a>
     </div>
     
     <!-- link style file -->        
